@@ -18,17 +18,20 @@ calcBtn.forEach((btn) => {
 
         if  (btnText === "." && display.value.includes(".") ){
             return;
-           } 
+        } 
 
        
 
         if (display.value === initialDisplay.toString() || lastOperator || initialNegative){
-           if(btnText === "."){
+           if (btnText === "." && initialNegative){
                 display.value += btnText
-           }else if (initialNegative){
+                initialNegative = false
+           }else if(btnText === "."){
+                display.value += btnText
+           }else if(initialNegative){
                 display.value = "-" + btnText
                 initialNegative = false
-            } else{
+            }else{
                 display.value = btnText
             }
             lastOperator = null
@@ -73,7 +76,7 @@ calcBtn.forEach((btn) => {
         initialNegative = true
        } else if (btnText === "%"){
             if (display.value != initialDisplay.toString()){
-                
+                display.value = (parseFloat(display.value) / 100).toString()
             }
        }
        
