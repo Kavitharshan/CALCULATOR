@@ -9,6 +9,8 @@ body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-image: url("calc-background.avif");
+    background-size: cover;
 }
 
 #casing {
