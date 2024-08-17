@@ -31,7 +31,7 @@ calcBtn.forEach((btn) => {
         } else  {
             display.value += btnText
         }
-       } else if (btnText === "+" || btnText === "-" || btnText === "X" || btnText === "÷") {
+       } else if (btnText === "+" || btnText === "-" || btnText === "X" || btnText === "÷" || btnText === "+/-" || btnText === "%") {
 
          if (display.value != initialDisplay.toString){
             if (lastOperator){
