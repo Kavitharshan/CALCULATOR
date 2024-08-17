@@ -74,8 +74,16 @@ body, html {
     background-color: hsl(0, 0%, 30%);
     border: none;
     color: white;
+    cursor: pointer;
 }
 
+.num-button:hover {
+    background-color: hsl(0, 0%, 40%);
+}
+
+.num-button:active {
+    background-color: hsl(0, 0%, 50%);
+}
 .operator-button{
     height: 100px;
     width: 100px;
@@ -83,6 +91,15 @@ body, html {
     background-color: hsl(35, 100%, 55%);
     border: none;
     color: white;
+    cursor: pointer;
+}
+
+.operator-button:hover {
+    background-color: hsl(35, 100%, 65%);
+}
+
+.operator-button:active {
+    background-color: hsl(35, 100%, 75%);
 }
 
 .long-button{
@@ -99,4 +116,12 @@ body, html {
     background-color: #A2AAAD;
     border: none;
     color: black
+}
+
+.top3:hover {
+    background-color: #e0e3e4;
+}
+
+.top3:active {
+    background-color: #f5f6f6;
 }

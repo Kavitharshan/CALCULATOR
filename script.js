@@ -88,8 +88,7 @@ calcBtn.forEach((btn) => {
         if (display.value != initialDisplay.toString() && calculateArr.length >= 2){
             calculateArr.push(display.value)
             calculateArr.push(btnText)
-            const result = calculateDisplay()
-            display.value = result.toString()
+            display.value = calculateDisplay(calculateArr)
             calculateArr = []
             lastOperator = null
             initialNegative = false;
@@ -100,9 +99,109 @@ calcBtn.forEach((btn) => {
     })
 })
 
+const handleDivision = (arr) => {
+    let result1 = []
+    let i = 0;
+
+    
+    while (i < arr.length){
+        if (arr[i] === "÷"){
+
+            prevValue = parseFloat(result1.pop())
+            nextValue = parseFloat(arr[i + 1])
+
+            result1.push(prevValue / nextValue)
+
+            i += 2
+        } else {
+            result1.push(arr[i])
+            i++
+        }
+    }
+
+    return result1;
+}
+
+const handleMultiplication = (arr) => {
+    let result2 = []
+    let i = 0
+
+    while (i < arr.length){
+        if (arr[i] === "X"){
+            
+            prevValue = parseFloat(result2.pop())
+            nextValue = parseFloat(arr[i + 1])
+
+            result2.push(prevValue * nextValue)
+
+            i += 2
+        } else {
+            result2.push(arr[i])
+            i++
+        }
 
 
-const calculateDisplay = (arr) => {
- 
+    }
+
+        return result2;
+}
+
+const handleAddition = (arr) => {
+    let result3 = []
+    let i = 0
+
+    while (i < arr.length){
+        if (arr[i] === "+"){
+
+        prevValue = parseFloat(result3.pop())
+        nextValue = parseFloat(arr[i + 1])
+
+        result3.push(prevValue + nextValue)
+
+        i += 2
+     }   else {
+            result3.push(arr[i])
+            i++
+        }
+    }
+
+        return result3;
+}
+
+
+const handleSubtraction = (arr) => {
+    let result4 = []
+    let i = 0
+
+    while (i < arr.length){
+        if (arr[i] === "-"){
+
+        prevValue = parseFloat(result4.pop())
+        nextValue = parseFloat(arr[i + 1])
+
+        result4.push(prevValue - nextValue)
+
+        i += 2
+     }   else {
+            result4.push(arr[i])
+            i++
+        }
+    }
+
+        return result4;
+}
+
+
+
+const calculateDisplay = (calculateArr) => {
+
+
+ let divided = handleDivision(calculateArr)
+ let multiplied = handleMultiplication(divided)
+ let addition = handleAddition(multiplied)
+ let final = handleSubtraction(addition)
+
+ return final[0];
+
 }
 
