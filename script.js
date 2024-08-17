@@ -9,6 +9,9 @@ let initialNegative = false
 
 display.value = initialDisplay;
 
+
+
+
 calcBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
     const btnText = btn.innerText
@@ -38,6 +41,8 @@ calcBtn.forEach((btn) => {
         } else  {
             display.value += btnText
         }
+
+        
        } else if (btnText === "+" || btnText === "-" || btnText === "X" || btnText === "÷") {
 
          if (display.value != initialDisplay.toString()){
@@ -70,14 +75,25 @@ calcBtn.forEach((btn) => {
        } else if (btnText === "+/-"){
         if (display.value != initialDisplay.toString()){
             display.value = (parseFloat(display.value) * -1).toString()
-        } else if (display.value === initialDisplay.toString()){
+        } else if (display.value === initialDisplay.toString()){        
             display.value = "-" + initialDisplay
+            initialNegative = true
         }
-        initialNegative = true
+        
        } else if (btnText === "%"){
             if (display.value != initialDisplay.toString()){
                 display.value = (parseFloat(display.value) / 100).toString()
             }
+       } else if (btnText === "="){
+        if (display.value != initialDisplay.toString() && calculateArr.length >= 2){
+            calculateArr.push(display.value)
+            calculateArr.push(btnText)
+            const result = calculateDisplay()
+            display.value = result.toString()
+            calculateArr = []
+            lastOperator = null
+            initialNegative = false;
+        }
        }
        
 
@@ -86,7 +102,7 @@ calcBtn.forEach((btn) => {
 
 
 
-const calculateDisplay = () => {
+const calculateDisplay = (arr) => {
  
 }
 
