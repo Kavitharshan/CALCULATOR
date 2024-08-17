@@ -5,6 +5,7 @@ const NumberBtn = document.querySelectorAll(".num-button")
 let calculateArr = []
 let initialDisplay = 0
 let lastOperator = null
+let initialNegative = false
 
 display.value = initialDisplay;
 
@@ -21,19 +22,20 @@ calcBtn.forEach((btn) => {
 
        
 
-        if (display.value === initialDisplay.toString() || lastOperator){
-            if (btnText === "."){
-                display.value += btnText
-            } else{ 
-           display.value = btnText
+        if (display.value === initialDisplay.toString() || lastOperator || initialNegative){
+            if (initialNegative){
+                display.value = "-" + btnText
+                initialNegative = false
+            } else{
+                display.value = btnText
             }
             lastOperator = null
         } else  {
             display.value += btnText
         }
-       } else if (btnText === "+" || btnText === "-" || btnText === "X" || btnText === "÷" || btnText === "+/-" || btnText === "%") {
+       } else if (btnText === "+" || btnText === "-" || btnText === "X" || btnText === "÷") {
 
-         if (display.value != initialDisplay.toString){
+         if (display.value != initialDisplay.toString()){
             if (lastOperator){
                 calculateArr[calculateArr.length - 1] = btnText
             } else {
@@ -53,6 +55,24 @@ calcBtn.forEach((btn) => {
          }
 
          lastOperator = btnText
+         initialNegative = false
+
+       } else if (btnText === "C"){
+            display.value = initialDisplay.toString();
+            calculateArr = []
+            lastOperator = null
+            initialNegative = false
+       } else if (btnText === "+/-"){
+        if (display.value != initialDisplay.toString()){
+            display.value = (parseFloat(display.value) * -1).toString()
+        } else if (display.value === initialDisplay.toString()){
+            display.value = "-" + initialDisplay
+        }
+        initialNegative = true
+       } else if (btnText === "%"){
+            if (display.value != initialDisplay.toString()){
+                
+            }
        }
        
 
