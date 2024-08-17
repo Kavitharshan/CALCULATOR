@@ -23,7 +23,9 @@ calcBtn.forEach((btn) => {
        
 
         if (display.value === initialDisplay.toString() || lastOperator || initialNegative){
-            if (initialNegative){
+           if(btnText === "."){
+                display.value += btnText
+           }else if (initialNegative){
                 display.value = "-" + btnText
                 initialNegative = false
             } else{
