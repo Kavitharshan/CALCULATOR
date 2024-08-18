@@ -6,6 +6,7 @@ let calculateArr = []
 let initialDisplay = 0
 let lastOperator = null
 let initialNegative = false
+let modulusTracker = false
 
 display.value = initialDisplay;
 
@@ -25,20 +26,22 @@ calcBtn.forEach((btn) => {
 
        
 
-        if (display.value === initialDisplay.toString() || lastOperator || initialNegative){
-           if (btnText === "." && initialNegative){
+        if (display.value === initialDisplay.toString() || lastOperator || initialNegative || modulusTracker){
+            if(btnText === "." && initialNegative){
                 display.value += btnText
                 initialNegative = false
-           }else if(btnText === "."){
+            }else if(btnText === "."){
                 display.value += btnText
-           }else if(initialNegative){
+            }else if(initialNegative){
                 display.value = "-" + btnText
-                initialNegative = false
+                initialNegative = false 
             }else{
                 display.value = btnText
             }
+
             lastOperator = null
-        } else  {
+            modulusTracker = false
+        } else{
             display.value += btnText
         }
 
@@ -72,6 +75,7 @@ calcBtn.forEach((btn) => {
             calculateArr = []
             lastOperator = null
             initialNegative = false
+            modulusTracker = false  
        } else if (btnText === "+/-"){
         if (display.value != initialDisplay.toString()){
             display.value = (parseFloat(display.value) * -1).toString()
@@ -83,6 +87,7 @@ calcBtn.forEach((btn) => {
        } else if (btnText === "%"){
             if (display.value != initialDisplay.toString()){
                 display.value = (parseFloat(display.value) / 100).toString()
+                modulusTracker = true       
             }
        } else if (btnText === "="){
         if (display.value != initialDisplay.toString() && calculateArr.length >= 2){
@@ -92,6 +97,7 @@ calcBtn.forEach((btn) => {
             calculateArr = []
             lastOperator = null
             initialNegative = false;
+            modulusTracker = false
         }
        }
        
