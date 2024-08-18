@@ -20,8 +20,8 @@ body, html {
     align-items: center;
     width: 590px;
     background-color: hsl(0, 0%, 15%);
-    border-radius: 15px;
-    height: 700px
+    border-radius: 20px;
+    height: 680px
 }
 
 #display{
