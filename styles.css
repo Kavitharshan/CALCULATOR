@@ -14,24 +14,26 @@ body, html {
 }
 
 #casing {
-    font-family: Arial, sans-serif;
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 650px;
+    width: 590px;
     background-color: hsl(0, 0%, 15%);
     border-radius: 15px;
-
+    height: 700px
 }
 
 #display{
     width: 100%;
-    height: 90px;
+    height: 110px;
     border: none;
     background-color: hsl(0, 0%, 20%);
     color: white;
     padding: 20px;
-    font-size: 5rem;
+    font-size: 70px;
+    font-family: Helvetica, Arial, sans-serif;
+    
 }
 
 #keys{
@@ -44,15 +46,17 @@ body, html {
     margin-top: 30px;
     margin-bottom: 50px;
     gap: 30px;
-
+    
 }
 
 #operand-container {
     display: grid;
     grid-template-columns: 1fr;
     width: 135px;
-    height: 100%;
+    height: 490px;
     gap: 7px;
+    
+    
  }
  
 #button-container{
@@ -61,20 +65,26 @@ body, html {
     width: 100%;
     height: 100%;
     gap: 7px;
+    
 }
 
 #lower-button-container{
-    margin-top: 7px;
+    margin-top: 16px;
+    border: none;
+    
 }
 
 .num-button{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
     background-color: hsl(0, 0%, 30%);
     border: none;
     color: white;
     cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
 }
 
 .num-button:hover {
@@ -85,13 +95,16 @@ body, html {
     background-color: hsl(0, 0%, 50%);
 }
 .operator-button{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
     background-color: hsl(35, 100%, 55%);
     border: none;
     color: white;
     cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
 }
 
 .operator-button:hover {
@@ -103,15 +116,15 @@ body, html {
 }
 
 .long-button{
-    height: 100px;
-    width: 205px;
+    height: 90px;
+    width: 190px;
     border-radius: 60px;
     margin-right: 7px;
 }
 
 .top3{
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
     border-radius: 50%;
     background-color: #A2AAAD;
     border: none;
@@ -128,4 +141,10 @@ body, html {
 
 .delete-button{
     cursor: pointer;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.equalButton{
+    margin-top: 10px;
 }

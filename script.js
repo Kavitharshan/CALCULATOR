@@ -49,7 +49,7 @@ calcBtn.forEach((btn) => {
         }
 
         
-       } else if (btnText === "+" || btnText === "-" || btnText === "X" || btnText === "÷") {
+       } else if (btnText === "+" || btnText === "-" || btnText === "×" || btnText === "÷") {
 
          if (display.value != initialDisplay.toString()){
             if (lastOperator){
@@ -136,7 +136,7 @@ const handleMultiplication = (arr) => {
     let i = 0
 
     while (i < arr.length){
-        if (arr[i] === "X"){
+        if (arr[i] === "×"){
             
             prevValue = parseFloat(result2.pop())
             nextValue = parseFloat(arr[i + 1])
