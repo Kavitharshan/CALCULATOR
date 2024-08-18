@@ -39,8 +39,11 @@ calcBtn.forEach((btn) => {
                 display.value = btnText
             }
 
+
             lastOperator = null
             modulusTracker = false
+
+
         } else{
             display.value += btnText
         }
@@ -70,7 +73,7 @@ calcBtn.forEach((btn) => {
          lastOperator = btnText
          initialNegative = false
 
-       } else if (btnText === "C"){
+       } else if (btnText === "AC"){
             display.value = initialDisplay.toString();
             calculateArr = []
             lastOperator = null
