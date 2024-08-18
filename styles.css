@@ -125,3 +125,7 @@ body, html {
 .top3:active {
     background-color: #f5f6f6;
 }
+
+.delete-button{
+    cursor: pointer;
+}
