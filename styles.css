@@ -148,3 +148,49 @@ body, html {
 .equalButton{
     margin-top: 5px;
 }
+
+@media (max-width: 844px){
+    #casing{
+        height:  530px;
+        width: 350px;
+    }
+
+    #keys{
+        height: 700px;
+        width: 400px;
+    }
+
+    .calc-button{
+        height: 60px;
+        width: 60px;
+    }
+        
+    #outer-container{
+        
+        width:205px;
+    }
+
+    #operand-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        height: 345px;
+        overflow: hidden;
+        
+    }
+
+    #lower-button-container{
+        grid-template-columns: 1fr 1fr;
+        width: 260px;
+    }
+
+    .long-button{
+        
+        width: 132px;
+        
+    }
+
+    .equalButton{
+        margin-bottom: 4px;
+    }
+
+}
