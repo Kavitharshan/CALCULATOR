@@ -155,14 +155,21 @@ body, html {
         width: 350px;
     }
 
+    #display{
+        text-align: center;
+        color: white;
+    }
+
     #keys{
         height: 700px;
         width: 400px;
+        text-align: center;
     }
 
     .calc-button{
         height: 60px;
         width: 60px;
+        text-align: center;
     }
         
     #outer-container{
